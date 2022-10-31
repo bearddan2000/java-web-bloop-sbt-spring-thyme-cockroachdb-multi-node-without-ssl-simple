@@ -1,0 +1,27 @@
+#######################
+# Spring boot properties
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+########################
+
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+
+  datasource:
+    url: jdbc:postgresql://db:26257/animal?sslmode=disable
+    driver-class-name: org.postgresql.Driver
+    username: root
+    password:
+    hikari:
+      connection-test-query: SELECT 1
+      maximum-pool-size: 50
+      minimum-idle: 20
+
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        ddl-auto: update
+        dialect: org.hibernate.dialect.CockroachDB201Dialect
+    show-sql: false
